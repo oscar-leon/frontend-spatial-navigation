@@ -1,3 +1,6 @@
+<img width="1630" height="506" alt="image" src="https://github.com/user-attachments/assets/096933f9-495e-4fcd-9765-253602940024" />
+
+
 # Horizontal keyboard-navigable list
 
 A React app that shows a horizontal list of content items. The focused item is always in the first (leftmost) position. You can move focus with the **Left** and **Right** arrow keys. Item cover images use `images.artwork_portrait` from the provided data.
