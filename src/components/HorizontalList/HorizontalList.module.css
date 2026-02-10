@@ -1,0 +1,41 @@
+.viewport {
+  width: 100%;
+  outline: none;
+  overflow: hidden;
+  padding: var(--spacing-sm) var(--spacing-sm);
+  pointer-events: none;
+}
+
+.viewport:focus-visible,
+.viewport:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.empty {
+  color: var(--color-text-secondary);
+  padding: var(--spacing-sm);
+  text-align: center;
+}
+
+.strip {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.itemWrapper {
+  flex: 0 0 auto;
+}
+
+.itemWrapper:last-child {
+  margin-right: 0;
+}
+
+.spacer {
+  flex-shrink: 0;
+  height: 1px;
+  min-height: 0;
+}

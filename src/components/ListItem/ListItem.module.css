@@ -1,0 +1,29 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cover {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform var(--transition-duration) var(--transition-easing),
+    box-shadow var(--transition-duration) var(--transition-easing);
+  box-shadow: var(--shadow-default);
+}
+
+.cover.focused {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-focused-elevated), var(--shadow-focused-outline);
+}
+
+.title {
+  color: var(--color-text-primary);
+  font-size: 14px;
+  margin-top: 16px;
+  text-align: center;
+  width: 200px; /* Match LIST_ITEM_WIDTH */
+  overflow-wrap: break-word;
+  word-break: break-word;
+  line-height: 1.4; /* Better readability for multi-line and to solve issue with focus position when titles are too long */
+}

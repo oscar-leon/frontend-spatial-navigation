@@ -1,0 +1,20 @@
+.grid {
+  width: 100%;
+  outline: none;
+  pointer-events: none;
+}
+
+.grid:focus-visible,
+.grid:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  pointer-events: auto;
+}
+
+.row {
+  margin-bottom: var(--spacing-xs);
+}
+
+.row:last-child {
+  margin-bottom: 0;
+}

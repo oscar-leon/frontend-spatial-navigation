@@ -1,0 +1,1 @@
+export const API_URL = 'https://eu.acc01.titanos.tv/v1/genres/1/contents?market=es&device=tv&locale=es&page=1&per_page=50&type=movie';

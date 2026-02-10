@@ -1,0 +1,45 @@
+.main {
+  min-height: 100vh;
+  background: var(--gradient-background);
+  padding: var(--spacing-md) var(--spacing-sm);
+  padding-left: calc(var(--spacing-sm) + env(safe-area-inset-left, 0px));
+  padding-right: calc(var(--spacing-sm) + env(safe-area-inset-right, 0px));
+  padding-top: calc(var(--spacing-md) + env(safe-area-inset-top, 0px));
+  padding-bottom: calc(var(--spacing-md) + env(safe-area-inset-bottom, 0px));
+}
+
+.title {
+  color: var(--color-text-primary);
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 var(--spacing-xs) 0;
+  padding: 0;
+}
+
+.loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-background);
+  color: var(--color-text-secondary);
+  font-size: 18px;
+}
+
+.error {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-background);
+  color: var(--color-text-primary);
+  font-size: 18px;
+  padding: var(--spacing-sm);
+  text-align: center;
+}
+
+.selected {
+  margin-top: var(--spacing-xs);
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
