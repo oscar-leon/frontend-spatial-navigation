@@ -1,6 +1,3 @@
-<img width="1630" height="506" alt="image" src="https://github.com/user-attachments/assets/096933f9-495e-4fcd-9765-253602940024" />
-
-
 # Horizontal keyboard-navigable list
 
 A React app that shows a horizontal list of content items. The focused item is always in the first (leftmost) position. You can move focus with the **Left** and **Right** arrow keys. Item cover images use `images.artwork_portrait` from the provided data.
@@ -61,6 +58,20 @@ npm run preview
 Imagine you are designing a streaming platform web application based on the CTV interface you've just completed. The application will manage content catalogs, handle user interactions with remote controls, and display media tiles in horizontal lists across different device types. Please answer **ONE** of the following discussion questions about the approach you'd take:
 
 - **Frontend Architecture & State Management**: Describe how you would architect the frontend to handle complex state (user preferences, content data, navigation focus) across multiple screen types and input methods. How would you structure your components and manage data flow as users navigate with remote controls?
+
+- Considering and assuming this is a CTV app and to tackle it's specific challenges (TV remote, keyboard, touch, platform, device, etc) I would go for a division of the state by layers/domains.
+- The generic approach for the store probably will be:
+  - Global app state, where we should keep:
+    - Navigation/focus such as the focused index per row and navigation for back navigation and focus restore (when we navigate on multiple views so we don't lose the last focused item)
+    - Content store, more related to the data layer. This way we could cache collections (performance) even keep a record/timestamps to implement and advanced cache strategy. Here we could also handle loading states (globally).
+    - User preferences, this should be related to favorites, local settings such as language or specific preferences, continue watching, language, etc
+  - Local components, where we can control:
+    - UI related updates, like dropdowns or activate/deactivate animations if we target specific devices. 
+
+The whole idea is to split the store into different ones so we avoid unnecessary rerenders at the same time we have a scalable and clear approach.
+
+For the remote control and input handling I created a draft of a rudimentary implementation, the summary should be to have an abstraction layer where we can normalise the key input and platform API specifics.
+
 
 - **Performance & Data Loading**: How would you optimize the frontend for smooth performance when displaying thousands of content tiles with images and metadata? Discuss your approach to lazy loading, caching, and memory management for resource-constrained CTV devices.
 
